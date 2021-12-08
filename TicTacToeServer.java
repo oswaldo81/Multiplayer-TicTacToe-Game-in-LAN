@@ -131,7 +131,8 @@ class Game {
             } catch (IOException e) {
                 System.out.println("Player died: " + e);
             } finally {
-                try {socket.close();} catch (IOException e) {}
+                try {socket.close();} catch (IOException e) {
+                System.err.println(e.message);}
             }
         }
     }
