@@ -33,7 +33,8 @@ public class TicTacToeClient {
     public TicTacToeClient(String serverAddress) throws Exception {
 
         // Setup networking
-        socket = new Socket(serverAddress, PORT);
+        socket = SSLSocketFactory.getDefault().createSocket();
+
         in = new BufferedReader(new InputStreamReader(
             socket.getInputStream()));
         out = new PrintWriter(socket.getOutputStream(), true);
