@@ -7,7 +7,7 @@ import java.net.Socket;
 public class TicTacToeServer {
 
     public static void main(String[] args) throws Exception {
-        ServerSocket listener = new ServerSocket(8901);
+        ServerSocket listener =  SSLServerSocketFactory.getDefault().createSocket();;
         System.out.println("Tic Tac Toe Server is Running");
         try {
             while (true) {
